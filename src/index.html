@@ -8,9 +8,9 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   
-  <!-- Font Awesome -->
+  <!-- Font Awesome (Kept minimal for essential links) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
   <link rel="stylesheet" href="style.css"/>
@@ -21,7 +21,7 @@
   <nav class="navbar" id="navbar">
     <div class="nav-container">
       <div class="logo">
-        <a href="#home">Skill<span>.</span></a>
+        <a href="#home">Skill.</a>
       </div>
       <ul class="nav-links">
         <li><a href="#home" class="nav-link active">Home</a></li>
@@ -29,7 +29,6 @@
         <li><a href="#experience" class="nav-link">Experience</a></li>
         <li><a href="#skills" class="nav-link">Skills</a></li>
         <li><a href="#projects" class="nav-link">Projects</a></li>
-        <li><a href="#education" class="nav-link">Education</a></li>
         <li><a href="#contact" class="nav-link">Contact</a></li>
       </ul>
       <div class="hamburger">
@@ -41,114 +40,112 @@
   </nav>
 
   <!-- ===== HERO ===== -->
-  <section class="hero section" id="home">
-    <div class="hero-content">
-      <div class="hero-left">
-        <h2 class="greeting">Hi, I'm <span class="highlight">Skill C H</span></h2>
-        <h3 class="role">
-          <span class="role-text" id="typing"></span><span class="cursor">&nbsp;</span>
-        </h3>
+  <section class="hero" id="home">
+    <div class="hero-container">
+      <!-- Image repositioned to the top center for a clean, modern recruiter-focused look -->
+      <div class="hero-profile-wrapper">
+        <div class="hero-banner"></div>
+        <div class="hero-profile">
+          <img src="caricature.png" alt="Skill C H" class="profile-img" />
+        </div>
+      </div>
+
+      <div class="hero-text-content">
+        <h1 class="greeting">Skill C H</h1>
+        <h2 class="role">
+          <span id="typing"></span><span class="cursor">&nbsp;</span>
+        </h2>
+        <div class="availability">
+          <span class="status-dot"></span> Available for Opportunities
+        </div>
         <p class="hero-desc">
-          Full Stack Developer Intern with hands-on experience in React.js, JavaScript, TypeScript, Tailwind CSS, Node.js, Express.js, MongoDB, and REST API integration.
-        </p>
-        <p class="hero-desc">
-          I have practical experience working on a live production project at Inloops Innovations and building full-stack web applications with clean UI, API integration, and database handling.
+          Full Stack Developer Intern specializing in React.js, TypeScript, Node.js, and MongoDB. 
+          I build scalable, clean, and production-ready web applications.
         </p>
         
         <div class="hero-btns">
           <a href="#projects" class="btn btn-primary">View Projects</a>
-          <a href="#contact" class="btn btn-secondary">Contact Me</a>
+          <a href="Resume.pdf" target="_blank" class="btn btn-secondary"><i class="fas fa-file-download"></i> Download Resume</a>
+          <button id="ai-audio-btn" class="btn btn-secondary">
+            <i class="fas fa-volume-up"></i> Play AI Intro
+          </button>
         </div>
 
         <div class="social-links">
           <a href="https://www.linkedin.com/in/skillch" target="_blank" aria-label="LinkedIn">
-            <i class="fab fa-linkedin"></i>
+            <i class="fab fa-linkedin-in"></i>
           </a>
           <a href="https://github.com/skillgovindan" target="_blank" aria-label="GitHub">
             <i class="fab fa-github"></i>
           </a>
         </div>
       </div>
-      
-      <div class="hero-right">
-        <div class="hero-image-wrapper">
-          <img src="caricature.png" alt="Skill C H Caricature" class="hero-image"/>
-          <div class="glow-effect"></div>
-        </div>
-      </div>
     </div>
   </section>
 
   <!-- ===== ABOUT ===== -->
-  <section class="about section" id="about">
+  <section class="about section bg-alt" id="about">
     <div class="section-title">
       <h2>About Me</h2>
-      <div class="underline"></div>
     </div>
     <div class="about-content">
       <p>
-        I am a passionate <strong>Full Stack Developer Intern</strong> currently working at <strong>Inloops Innovations</strong> (Feb 2026 - Present). I thrive on building efficient, scalable, and visually appealing web applications.
+        I am a passionate <strong>Full Stack Developer Intern</strong> currently working at <strong>Inloops Innovations</strong> (Feb 2026 - Present). I thrive on building efficient, scalable, and visually appealing web applications with clean architecture.
       </p>
       <p>
-        At my current role, I am working on <strong>LABBSE</strong>, a live laboratory management software utilized for lab operations, patient entries, billing, results, and comprehensive reporting. 
+        Currently, I am working on <strong>LABBSE</strong>, a live laboratory management software utilized for lab operations, patient entries, billing, results, and comprehensive reporting. My experience bridges the gap between seamless user interfaces and robust backend systems.
       </p>
-      <div class="about-highlights">
-        <div class="highlight-box">
-          <i class="fas fa-desktop"></i>
-          <h4>Frontend</h4>
-          <p>React.js, TypeScript, JavaScript, HTML, CSS, Tailwind CSS</p>
+      <div class="about-metrics">
+        <div class="metric">
+          <h3>Frontend</h3>
+          <p>React.js, TypeScript, Tailwind CSS</p>
         </div>
-        <div class="highlight-box">
-          <i class="fas fa-server"></i>
-          <h4>Backend</h4>
-          <p>Node.js, Express.js, MongoDB, Mongoose, REST APIs, Swagger, Postman, Axios</p>
+        <div class="metric">
+          <h3>Backend</h3>
+          <p>Node.js, Express.js, MongoDB</p>
         </div>
       </div>
-      <p class="about-closing">
-        I believe in writing clean, maintainable code and following established architectural patterns to deliver high-quality software solutions.
-      </p>
     </div>
   </section>
 
   <!-- ===== EXPERIENCE ===== -->
-  <section class="experience section bg-alt" id="experience">
+  <section class="experience section" id="experience">
     <div class="section-title">
       <h2>Experience</h2>
-      <div class="underline"></div>
     </div>
     <div class="timeline">
       <div class="timeline-item">
-        <div class="timeline-dot"></div>
         <div class="timeline-content card">
           <div class="timeline-header">
             <h3>Full Stack Developer Intern</h3>
-            <span class="timeline-date"><i class="far fa-calendar-alt"></i> Feb 2026 - Present</span>
+            <span class="timeline-date">Feb 2026 - Present</span>
           </div>
           <h4 class="company">Inloops Innovations</h4>
           <ul class="experience-list">
             <li>Working on <strong>LABBSE</strong>, a live production laboratory management system.</li>
-            <li>Developed and maintained frontend features using <strong>React.js, TypeScript, JavaScript, HTML, CSS, and Tailwind CSS</strong>.</li>
-            <li>Built responsive and dynamic UI components for patient entry, billing, result, and report-related modules.</li>
-            <li>Integrated frontend pages with backend REST APIs using <strong>Axios</strong>.</li>
-            <li>Worked with backend APIs using <strong>Node.js, Express.js, MongoDB, Mongoose, and Swagger</strong>.</li>
-            <li>Used <strong>Postman</strong> for API testing and <strong>Git/GitHub</strong> for version control.</li>
-            <li>Followed clean backend structure using router, service, and repository layers.</li>
+            <li>Developed and maintained frontend features using React.js, TypeScript, and Tailwind CSS.</li>
+            <li>Built responsive UI components for patient entry, billing, result, and report modules.</li>
+            <li>Integrated frontend pages with backend REST APIs using Axios.</li>
+            <li>Architected backend APIs using Node.js, Express.js, MongoDB, Mongoose, and Swagger.</li>
+            <li>Followed clean backend structure utilizing router, service, and repository layers.</li>
           </ul>
+          <div style="margin-top: 20px; padding-top: 15px; border-top: 1px solid var(--border-color);">
+            <a href="https://drive.google.com/file/d/1n9394Dv4NRJwG4wwP0ynPJKg9biZELcR/view?usp=drive_link" target="_blank" class="btn-link" style="font-weight: 600;"><i class="fas fa-certificate"></i> View Internship Certificate</a>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ===== SKILLS ===== -->
-  <section class="skills section" id="skills">
+  <section class="skills section bg-alt" id="skills">
     <div class="section-title">
-      <h2>Skills</h2>
-      <div class="underline"></div>
+      <h2>Technical Skills</h2>
     </div>
     <div class="skills-container">
       
       <div class="skill-category">
-        <h3><i class="fas fa-code"></i> Frontend</h3>
+        <h3>Frontend</h3>
         <div class="badges">
           <span class="badge">React.js</span>
           <span class="badge">JavaScript</span>
@@ -156,41 +153,26 @@
           <span class="badge">HTML5</span>
           <span class="badge">CSS3</span>
           <span class="badge">Tailwind CSS</span>
-          <span class="badge">Responsive UI</span>
-          <span class="badge">Form Handling</span>
-          <span class="badge">API Integration</span>
         </div>
       </div>
 
       <div class="skill-category">
-        <h3><i class="fas fa-database"></i> Backend</h3>
+        <h3>Backend</h3>
         <div class="badges">
           <span class="badge">Node.js</span>
           <span class="badge">Express.js</span>
-          <span class="badge">REST API Development</span>
           <span class="badge">MongoDB</span>
           <span class="badge">Mongoose</span>
+          <span class="badge">REST APIs</span>
         </div>
       </div>
 
       <div class="skill-category">
-        <h3><i class="fas fa-tools"></i> Tools</h3>
+        <h3>Tools & Core</h3>
         <div class="badges">
-          <span class="badge">Git</span>
-          <span class="badge">GitHub</span>
-          <span class="badge">VS Code</span>
-          <span class="badge">Postman</span>
-          <span class="badge">Axios</span>
-          <span class="badge">Swagger</span>
+          <span class="badge">Git / GitHub</span>
+          <span class="badge">Postman / Swagger</span>
           <span class="badge">MongoDB Atlas</span>
-          <span class="badge">MongoDB Compass</span>
-          <span class="badge">Studio 3T</span>
-        </div>
-      </div>
-
-      <div class="skill-category">
-        <h3><i class="fas fa-laptop-code"></i> Programming</h3>
-        <div class="badges">
           <span class="badge">Java Basics</span>
           <span class="badge">Python Basics</span>
         </div>
@@ -200,41 +182,37 @@
   </section>
 
   <!-- ===== PROJECTS ===== -->
-  <section class="projects section bg-alt" id="projects">
+  <section class="projects section" id="projects">
     <div class="section-title">
-      <h2>Projects</h2>
-      <div class="underline"></div>
+      <h2>Featured Projects</h2>
     </div>
     
     <div class="projects-grid">
       
-      <!-- Project 1 -->
-      <div class="project-card card">
+      <div class="project-card card" onclick="window.open('https://moneymap-saas.vercel.app/', '_blank')" style="cursor: pointer;">
         <div class="project-header">
           <h3>MoneyMap SaaS</h3>
           <span class="project-status">Ongoing</span>
         </div>
         <p class="project-desc">
-          A full-stack personal finance and expense tracking SaaS application. It helps users manage income, expenses, categories, balance, reports, lending, borrowing, and transaction history.
+          A full-stack personal finance and expense tracking SaaS. Manages income, expenses, categories, balance, lending, and transaction history.
         </p>
         <div class="project-features">
-          <strong>Key Features:</strong>
           <ul>
-            <li>Income and expense CRUD operations & Category management</li>
+            <li>Income/Expense CRUD & Category management</li>
             <li>Daily, weekly, monthly, and yearly reports</li>
-            <li>Current balance calculation & Lending/borrowing support</li>
-            <li>Responsive dashboard & Clean backend architecture</li>
+            <li>Clean backend architecture (Router → Service → Repository)</li>
           </ul>
         </div>
         <div class="project-tech">
-          <span>React.js</span> <span>JavaScript</span> <span>Tailwind CSS</span> <span>Node.js</span> <span>Express.js</span> <span>MongoDB</span> <span>REST APIs</span>
+          <span>React.js</span> <span>Tailwind CSS</span> <span>Node.js</span> <span>MongoDB</span>
         </div>
-        <div class="project-links">
-          <a href="https://github.com/skillgovindan/MoneyMap-Saas" target="_blank" class="btn-link"><i class="fab fa-github"></i> GitHub</a>
+        <div class="project-links" onclick="event.stopPropagation()">
+          <a href="https://moneymap-saas.vercel.app/" target="_blank" class="btn-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+          <a href="https://github.com/skillgovindan/MoneyMap-Saas" target="_blank" class="btn-link" style="margin-left: 15px;"><i class="fab fa-github"></i> GitHub</a>
         </div>
       </div>
 
-      <!-- Project 2 -->
       <div class="project-card card">
         <div class="project-header">
           <h3>ToDo App</h3>
@@ -243,136 +221,95 @@
           A responsive task management application where users can add, update, delete, and manage daily tasks efficiently.
         </p>
         <div class="project-tech">
-          <span>React.js</span> <span>JavaScript</span> <span>HTML</span> <span>CSS</span>
+          <span>React.js</span> <span>JavaScript</span> <span>HTML/CSS</span>
         </div>
         <div class="project-links">
-          <a href="https://github.com/ama1t/ToDoApp" target="_blank" class="btn-link"><i class="fab fa-github"></i> GitHub</a>
+          <a href="https://github.com/ama1t/ToDoApp" target="_blank" class="btn-link">View Repository</a>
         </div>
       </div>
 
-      <!-- Project 3 -->
       <div class="project-card card">
         <div class="project-header">
-          <h3>IoT-Based Meat Quality Detector</h3>
+          <h3>IoT Meat Quality Detector</h3>
         </div>
         <p class="project-desc">
-          An IoT-based project developed to monitor and detect meat freshness using sensors and real-time data analysis.
+          An IoT-based system developed to monitor and detect meat freshness using sensors and real-time data analysis.
         </p>
         <div class="project-tech">
-          <span>ESP32-CAM</span> <span>Python</span> <span>HTML</span> <span>CSS</span> <span>JavaScript</span> <span>IoT</span>
+          <span>ESP32-CAM</span> <span>Python</span> <span>JavaScript</span>
         </div>
         <div class="project-links">
-          <a href="https://github.com/VishakhSatheesh/Meat_n_Meet" target="_blank" class="btn-link"><i class="fab fa-github"></i> GitHub</a>
-        </div>
-      </div>
-
-      <!-- Project 4 -->
-      <div class="project-card card">
-        <div class="project-header">
-          <h3>Trip Planner</h3>
-        </div>
-        <p class="project-desc">
-          A web-based trip planning system for route and itinerary suggestions based on user preferences.
-        </p>
-        <div class="project-tech">
-          <span>Python</span> <span>JavaScript</span> <span>HTML</span> <span>CSS</span>
-        </div>
-        <div class="project-links">
-          <span class="note"><i class="fas fa-info-circle"></i> Project details not available</span>
+          <a href="https://github.com/VishakhSatheesh/Meat_n_Meet" target="_blank" class="btn-link">View Repository</a>
         </div>
       </div>
 
     </div>
   </section>
 
-  <!-- ===== EDUCATION & CERTIFICATIONS ===== -->
-  <section class="education section" id="education">
+  <!-- ===== EDUCATION (Merged into simple section) ===== -->
+  <section class="education section bg-alt" id="education">
     <div class="section-title">
       <h2>Education & Certifications</h2>
-      <div class="underline"></div>
     </div>
     
     <div class="edu-cert-container">
-      
-      <!-- Education -->
       <div class="edu-column">
-        <h3><i class="fas fa-graduation-cap"></i> Education</h3>
         <div class="edu-item card">
           <h4>BTech in Computer Science</h4>
-          <p class="institution">Vimal Jyothi Engineering College</p>
-          <span class="year">2021 - 2025</span>
+          <p class="institution">Vimal Jyothi Engineering College (2021 - 2025)</p>
         </div>
         <div class="edu-item card">
           <h4>Higher Secondary Science</h4>
-          <p class="institution">Tagore Vidyaniketan</p>
-          <span class="year">2019 - 2021</span>
-        </div>
-        <div class="edu-item card">
-          <h4>SSLC</h4>
-          <p class="institution">Tagore Vidyaniketan</p>
-          <span class="year">2018</span>
+          <p class="institution">Tagore Vidyaniketan (2019 - 2021)</p>
         </div>
       </div>
 
-      <!-- Certifications -->
       <div class="cert-column">
-        <h3><i class="fas fa-certificate"></i> Certifications</h3>
         <div class="cert-item card">
           <h4>Java and Python Full Stack Development Program</h4>
-          <span class="year">Aug 2025 - Present</span>
-        </div>
-        <div class="cert-item card">
-          <h4>Workshop: Full Stack Web Development</h4>
+          <p class="institution">Ongoing</p>
         </div>
         <div class="cert-item card">
           <h4>Certification: JavaScript, CSS, PHP</h4>
           <p class="institution">Udemy</p>
         </div>
       </div>
-
     </div>
   </section>
 
   <!-- ===== CONTACT ===== -->
-  <section class="contact section bg-alt" id="contact">
+  <section class="contact section" id="contact">
     <div class="section-title">
-      <h2>Contact Me</h2>
-      <div class="underline"></div>
+      <h2>Get In Touch</h2>
     </div>
     <div class="contact-container">
       <p class="contact-text">
-        I am currently open for opportunities. Whether you have a question or just want to say hi, I'll try my best to get back to you!
+        I'm currently looking for new opportunities. Whether you have a question or want to discuss a project, my inbox is always open.
       </p>
       
       <div class="contact-cards">
         <div class="contact-card card">
-          <div class="contact-icon"><i class="fas fa-envelope"></i></div>
           <h4>Email</h4>
           <a href="mailto:skillgovindan@gmail.com">skillgovindan@gmail.com</a>
         </div>
         
         <div class="contact-card card">
-          <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
           <h4>Phone</h4>
           <a href="tel:+918086220299">+91 8086220299</a>
         </div>
       </div>
 
       <div class="contact-socials">
-        <a href="https://www.linkedin.com/in/skillch" target="_blank" aria-label="LinkedIn" class="social-btn">
-          <i class="fab fa-linkedin-in"></i> LinkedIn
-        </a>
-        <a href="https://github.com/skillgovindan" target="_blank" aria-label="GitHub" class="social-btn">
-          <i class="fab fa-github"></i> GitHub
-        </a>
+        <a href="https://www.linkedin.com/in/skillch" target="_blank" class="social-btn">LinkedIn</a>
+        <a href="https://github.com/skillgovindan" target="_blank" class="social-btn">GitHub</a>
       </div>
     </div>
   </section>
 
   <!-- ===== FOOTER ===== -->
-  <footer class="footer">
+  <footer class="footer bg-alt">
     <div class="footer-content">
-      <div class="footer-logo">Skill<span>.</span></div>
+      <div class="footer-logo">Skill.</div>
       <p>&copy; 2026 Skill C H. All rights reserved.</p>
     </div>
   </footer>

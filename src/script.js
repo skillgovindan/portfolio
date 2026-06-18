@@ -16,19 +16,15 @@ function typeEffect() {
   const currentText = texts[textIndex];
   
   if (isDeleting) {
-    // Remove char
     typingElement.textContent = currentText.substring(0, charIndex - 1);
     charIndex--;
   } else {
-    // Add char
     typingElement.textContent = currentText.substring(0, charIndex + 1);
     charIndex++;
   }
 
-  // Determine typing speed
   let typeSpeed = isDeleting ? erasingDelay : typingDelay;
 
-  // If word is complete
   if (!isDeleting && charIndex === currentText.length) {
     typeSpeed = newTextDelay;
     isDeleting = true;
@@ -41,7 +37,7 @@ function typeEffect() {
   setTimeout(typeEffect, typeSpeed);
 }
 
-// Start typing effect on load
+// Start typing effect
 document.addEventListener("DOMContentLoaded", () => {
   if (texts.length) setTimeout(typeEffect, newTextDelay);
 });
@@ -51,38 +47,35 @@ const hamburger = document.querySelector(".hamburger");
 const navLinks = document.querySelector(".nav-links");
 const navItems = document.querySelectorAll(".nav-link");
 
-hamburger.addEventListener("click", () => {
-  hamburger.classList.toggle("active");
-  navLinks.classList.toggle("active");
-});
-
-// Close mobile menu when link is clicked
-navItems.forEach(item => {
-  item.addEventListener("click", () => {
-    hamburger.classList.remove("active");
-    navLinks.classList.remove("active");
+if (hamburger) {
+  hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    navLinks.classList.toggle("active");
   });
-});
+
+  navItems.forEach(item => {
+    item.addEventListener("click", () => {
+      hamburger.classList.remove("active");
+      navLinks.classList.remove("active");
+    });
+  });
+}
 
 // Sticky Navbar Background and Active Link Highlight
 const navbar = document.getElementById("navbar");
 const sections = document.querySelectorAll("section");
 
 window.addEventListener("scroll", () => {
-  // Add scrolled class for background blur/shadow
   if (window.scrollY > 50) {
     navbar.classList.add("scrolled");
   } else {
     navbar.classList.remove("scrolled");
   }
 
-  // Active Link Highlighting
   let current = "";
   
   sections.forEach(section => {
     const sectionTop = section.offsetTop;
-    const sectionHeight = section.clientHeight;
-    // Adjusted offset to trigger slightly earlier
     if (pageYOffset >= sectionTop - 150) {
       current = section.getAttribute("id");
     }
@@ -95,3 +88,69 @@ window.addEventListener("scroll", () => {
     }
   });
 });
+
+// AI Audio Intro using Web Speech API
+const aiAudioBtn = document.getElementById("ai-audio-btn");
+let isPlaying = false;
+
+if (aiAudioBtn) {
+  aiAudioBtn.addEventListener("click", () => {
+    if (!('speechSynthesis' in window)) {
+      alert("Sorry, your browser does not support text to speech!");
+      return;
+    }
+
+    if (isPlaying) {
+      window.speechSynthesis.cancel();
+      aiAudioBtn.innerHTML = '<i class="fas fa-volume-up"></i> Play AI Intro';
+      isPlaying = false;
+      return;
+    }
+
+    const introText = "Hi, I'm Skill. A Full Stack Developer Intern with hands-on experience in React, Node, and Mongo D B. I specialize in building scalable web applications with clean architecture and robust APIs. Feel free to view my projects or contact me.";
+    
+    const utterance = new SpeechSynthesisUtterance(introText);
+    
+    // Attempt to find a good English voice
+    const voices = window.speechSynthesis.getVoices();
+    const preferredVoice = voices.find(voice => voice.lang.includes('en') && voice.name.includes('Google')) 
+                           || voices.find(voice => voice.lang.includes('en'));
+    
+    if (preferredVoice) {
+      utterance.voice = preferredVoice;
+    }
+    
+    utterance.rate = 1.0;
+    utterance.pitch = 1.0;
+
+    utterance.onstart = () => {
+      isPlaying = true;
+      aiAudioBtn.innerHTML = '<i class="fas fa-stop"></i> Stop Audio';
+      aiAudioBtn.style.color = '#ef4444'; // Red color while playing
+      aiAudioBtn.style.borderColor = '#ef4444';
+    };
+
+    utterance.onend = () => {
+      isPlaying = false;
+      aiAudioBtn.innerHTML = '<i class="fas fa-volume-up"></i> Play AI Intro';
+      aiAudioBtn.style.color = '';
+      aiAudioBtn.style.borderColor = '';
+    };
+
+    utterance.onerror = () => {
+      isPlaying = false;
+      aiAudioBtn.innerHTML = '<i class="fas fa-volume-up"></i> Play AI Intro';
+      aiAudioBtn.style.color = '';
+      aiAudioBtn.style.borderColor = '';
+    };
+
+    window.speechSynthesis.speak(utterance);
+  });
+}
+
+// Ensure voices are loaded for Web Speech API
+if ('speechSynthesis' in window) {
+  window.speechSynthesis.onvoiceschanged = () => {
+    window.speechSynthesis.getVoices();
+  };
+}
