@@ -154,3 +154,57 @@ if ('speechSynthesis' in window) {
     window.speechSynthesis.getVoices();
   };
 }
+
+// Scroll Reveal Animations
+const revealElements = document.querySelectorAll('.card, .section-title, .metric, .skill-category');
+
+const revealObserver = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('revealed');
+      observer.unobserve(entry.target);
+    }
+  });
+}, {
+  root: null,
+  threshold: 0.15,
+  rootMargin: "0px 0px -50px 0px"
+});
+
+revealElements.forEach(el => {
+  el.classList.add('hidden-reveal');
+  revealObserver.observe(el);
+});
+
+// Dark Mode Toggle
+const themeToggle = document.getElementById('theme-toggle');
+const themeIcon = themeToggle.querySelector('i');
+
+// Check local storage for theme preference
+const currentTheme = localStorage.getItem('theme');
+if (currentTheme) {
+  document.documentElement.setAttribute('data-theme', currentTheme);
+  if (currentTheme === 'dark') {
+    themeIcon.classList.replace('fa-moon', 'fa-sun');
+  }
+}
+
+themeToggle.addEventListener('click', () => {
+  let theme = document.documentElement.getAttribute('data-theme');
+  
+  if (theme === 'dark') {
+    document.documentElement.removeAttribute('data-theme');
+    localStorage.setItem('theme', 'light');
+    themeIcon.classList.replace('fa-sun', 'fa-moon');
+  } else {
+    document.documentElement.setAttribute('data-theme', 'dark');
+    localStorage.setItem('theme', 'dark');
+    themeIcon.classList.replace('fa-moon', 'fa-sun');
+  }
+  
+  // Rotate animation on click
+  themeIcon.style.transform = 'rotate(360deg)';
+  setTimeout(() => {
+    themeIcon.style.transform = 'rotate(0deg)';
+  }, 300);
+});

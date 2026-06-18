@@ -9,7 +9,21 @@
   --accent-hover: #0f172a;
   --border-color: rgba(0, 0, 0, 0.08);
   --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 10px 15px -3px rgba(0, 0, 0, 0.02);
+  --nav-bg: rgba(255, 255, 255, 0.9);
   --transition: all 0.2s ease-in-out;
+}
+
+[data-theme="dark"] {
+  --bg-main: #0a0a0a;
+  --bg-alt: #121212;
+  --bg-card: #18181b;
+  --text-main: #f4f4f5;
+  --text-muted: #a1a1aa;
+  --accent: #e4e4e7;
+  --accent-hover: #ffffff;
+  --border-color: rgba(255, 255, 255, 0.08);
+  --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+  --nav-bg: rgba(10, 10, 10, 0.9);
 }
 
 * {
@@ -130,7 +144,7 @@ img {
   left: 0;
   width: 100%;
   padding: 20px 5%;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: var(--nav-bg);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   z-index: 1000;
@@ -724,4 +738,16 @@ img {
     flex-direction: column;
     gap: 10px;
   }
+}
+
+/* ===== SCROLL REVEAL ANIMATIONS ===== */
+.hidden-reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s cubic-bezier(0.5, 0, 0, 1), transform 0.6s cubic-bezier(0.5, 0, 0, 1);
+}
+
+.revealed {
+  opacity: 1;
+  transform: translateY(0);
 }
