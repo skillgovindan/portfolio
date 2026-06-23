@@ -2,7 +2,9 @@
 const texts = [
   "Full Stack Developer Intern",
   "React Developer",
-  "MERN Stack Developer"
+  "MERN Stack Developer",
+  "Java Developer",
+  "Python Developer"
 ];
 let textIndex = 0;
 let charIndex = 0;
