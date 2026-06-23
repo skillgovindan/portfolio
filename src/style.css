@@ -501,8 +501,9 @@ img {
 .project-header {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   margin-bottom: 12px;
+  gap: 15px;
 }
 
 .project-header h3 {
